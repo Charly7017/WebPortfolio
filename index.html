@@ -1,14 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mi portafolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="general.css" />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="headerMenu.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
 </head>
 <body>
-    
-    <h1>Hola soy Carlos</h1>
-    <button>Haz click para enviar correo</button>
 
+    <header class="header p-4">
+        <nav class="header__nav">
+            <ul class="header__menu">
+                <li class="header__menu-item"><a href="#aboutMe" class="header__menu-link">Sobre mi</a></li>
+                <li class="header__menu-item"><a href="#experience" class="header__menu-link">Experiencia</a></li>
+                <li class="header__menu-item"><a href="#highlightedProjects" class="header__menu-link">Proyectos</a></li>
+                <li class="header__menu-item"><a href="#skills" class="header__menu-link">Habilidades</a></li>
+            </ul>
+                <div class="header__hamburger" onclick="toggleMenu()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+        </nav>
+    </header>
+
+
+
+    <section class="hero p-4">
+        <div class="container text-center text-white">
+            <h1 class="hero-title">Carlos Santamaría</h1>
+            <h2 class="hero-subtitle">Software Developer</h2>
+            <p class="hero-description">Pasión por la tecnología y desarrollo de soluciones innovadoras</p>
+            <div class="contact-info gap-4 d-flex justify-content-center mt-4 mb-4 reveal-contact">
+                <a class="icon-link" target="_blank" href="https://www.linkedin.com/in/carlos-santamaria-solano-83703a1a6/">
+                    <i class="bi bi-linkedin"></i>
+                </a>
+                <a class="icon-link" target="_blank" href="https://github.com/Charly7017">
+                    <i class="bi bi-github"></i>
+                </a>
+                <a class="icon-link" target="_blank" href="mailto:charlysanta936@gmail.com">
+                    <i class="bi bi-envelope"></i>
+                </a>
+                <a class="icon-link" target="_blank" href="https://drive.google.com/drive/folders/10ooBDXO64hIsIK3dW63raIiK89WIxxJC?usp=drive_link">
+                    <i class="bi bi-file-earmark-person"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="aboutMe" class="about-me p-4 text-white">
+        <div class="about-me__container container">
+            <h2 class="about-me__title text-center reveal-title">Conóceme</h2>
+            <p class="about-me__description mx-auto lead reveal-description">
+                Ingeniero en Sistemas Computacionales con experiencia en desarrollo web y móvil, especializado en la creación de aplicaciones eficientes y orientadas al usuario. Apasionado por la programación y el desarrollo de software, con habilidades en el trabajo en equipo y la resolución de problemas. Soy una persona autodidacta, comprometida con el aprendizaje continuo y la aplicación de soluciones inovadoras.
+            </p>
+        </div>
+    </section>
+
+    <section id="experience" class="experience p-4 text-white">
+        <div class="container">
+            <h2 class="text-center mb-4 reveal-experience-title">Experiencia</h2>
+            <div class="timeline">
+                <div class="timeline-item reveal-experience">
+                    <div class="timeline-content p-4">
+                        <h3>Desarrollador Jr</h3>
+                        <p><strong>SHARKSIA</strong> • Agosto 2024 - Actualidad</p>
+                        <p>Desarrollo y mantenimiento de aplicaciones empresariales utilizando .NET y tecnologías modernas.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-experience">
+                    <div class="timeline-content p-4">
+                        <h3>Practicante</h3>
+                        <p><strong>Tubos de Acero de México SA (TAMSA)</strong> • Agosto 2023 - Julio 2024</p>
+                        <p>Colaboración en sistemas internos de control y automatización de procesos.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal-experience">
+                    <div class="timeline-content p-4">
+                        <h3>Practicante</h3>
+                        <p><strong>Servicios de Software Ehecatl</strong> • Junio 2022 - Septiembre 2022</p>
+                        <p>Apoyo en desarrollo web y pruebas funcionales.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="highlightedProjects" class="highlightedProjects p-4 text-white">
+        <div class="container">
+            <h2 class="text-center mb-4 reveal-projects-title">Proyectos Destacados</h2>
+            <div class="row row-cols-1 row-cols-lg-3 mb-4 reveal-projects-row gy-3">
+                <div class="col">
+                    <div class="cardProjects reveal-card">
+                        <img src="Images/BookingSystemImage.png" alt="Project Image">
+                        <h5>Sistema de Reservaciones</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cardProjects reveal-card">
+                        <img src="Images/TaskManagerImage.png" alt="Project Image">
+                        <h5>Administrador de Tareas</h5>
+                    </div>
+                </div>
+                <div class="col">
+                    <div class="cardProjects reveal-card">
+                        <img src="Images/accountspayablesystemImage.png" alt="Project Image">
+                        <h5>Seguimiento de pagos</h5>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-center">
+                <a href="projects.html" class="btnProjects reveal-btn">Ver más proyectos</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="p-4 skills">
+        <div class="container text-center text-white">
+            <h2 class="mb-3 reveal-skills-title">Habilidades</h2>
+
+            <h3 class="mb-4 reveal-skills-section">Frontend</h3>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 reveal-skills-items">
+                <div class="col"><img src="Images/html-icon.svg" /><p>HTML</p></div>
+                <div class="col"><img src="Images/css-icon.svg" /><p>CSS</p></div>
+                <div class="col"><img src="Images/js-icon.svg" /><p>Javascript</p></div>
+                <div class="col"><img src="Images/jquery.icon.svg" /><p>jQuery</p></div>
+                <div class="col"><img src="Images/boostrap-icon.svg" /><p>Bootstrap</p></div>
+            </div>
+            <hr />
+
+            <h3 class="mb-4 reveal-skills-section">Backend</h3>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-3 reveal-skills-items">
+                <div class="col"><img src="Images/csharp-icon.svg" /><p>C#</p></div>
+                <div class="col"><img src="Images/dotnetwhite.svg" /><p>.NET</p></div>
+                <div class="col"><img src="Images/aspdotnetwhite.svg"/><p>ASP.NET</p></div>
+                <div class="col"><img src="Images/sql-icon.svg" /><p>SQL</p></div>
+            </div>
+            <hr />
+
+            <h3 class="mb-4 reveal-skills-section">Herramientas</h3>
+            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-5 g-3 reveal-skills-items">
+                <div class="col"><img src="Images/git-icon.svg" /><p>Git</p></div>
+                <div class="col"><img src="Images/githubwhite.svg" /><p>GitHub</p></div>
+                <div class="col"><img src="Images/figma-icon.svg" /><p>Figma</p></div>
+                <div class="col"><img src="Images/azuredevops-icon.svg" /><p>Azure DevOps</p></div>
+                <div class="col"><img src="Images/postman-icon.svg" /><p>Postman</p></div>
+            </div>
+            <hr />
+
+            <h3 class="mb-4 reveal-skills-section">Otros</h3>
+            <div class="row row-cols-2 reveal-skills-items">
+                <div class="col"><img src="Images/android-icon.svg" /><p>Android</p></div>
+                <div class="col"><img src="Images/kotlin-icon.svg" /><p>Kotlin</p></div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact" class="footer text-white d-flex align-items-center justify-content-between justify-content-md-around p-4">
+        <h2 class="mb-3"><i class="bi bi-c-circle"></i> 2024 | Carlos Santamaría</h2>
+        <a href="#" class="p-3"><i class="bi bi-arrow-up"></i></a>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="ScrollRevealAnimations.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

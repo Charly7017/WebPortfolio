@@ -1,0 +1,82 @@
+/* Header CSS */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0e0e2c;
+    padding: 10px;
+    position: relative; /* Necesario para posicionar el botón de hamburguesa */
+}
+
+.header__menu {
+    display: flex;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    gap: 80px;
+}
+
+.header__menu-item {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    transition: color 0.3s;
+}
+
+.header__menu-item:hover {
+    cursor: pointer;
+}
+
+.header__menu-link {
+    color: white;
+    text-decoration: none;
+}
+
+.header__menu-link:visited {
+    color: white;
+}
+
+/* Estilos del botón hamburguesa */
+.header__hamburger {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+    justify-content: space-around;
+    align-items: center;
+    height: 25px;
+    width: 35px;
+    position: absolute; /* Posicionamiento absoluto */
+    right: 20px; /* Ajusta la distancia desde el borde derecho */
+    top: 20px; /* Ajusta la distancia desde el borde superior */
+}
+
+.header__hamburger .bar {
+    height: 4px;
+    width: 30px;
+    background-color: white;
+}
+
+/* Estilos para pantallas pequeñas */
+@media (max-width: 868px) {
+    .header__menu {
+        display: none; 
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .header__hamburger {
+        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+    }
+}
+
+/* Ajustes para pantallas aún más pequeñas */
+@media (max-width: 480px) {
+    .header__menu {
+        gap: 15px;
+    }
+}
+
+.header__menu.active {
+    display: flex; /* Muestra el menú cuando está activo */
+}
