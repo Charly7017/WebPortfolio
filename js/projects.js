@@ -1,20 +1,32 @@
 $(document).ready(function () {
-    // Enum-like helper para categorías
+
+
+    $(".nav-list li a").on("click", function (e) {
+        e.preventDefault(); 
+    });
+
     const Category = {
         All: "All",
         Web: "Web",
         Mobile: "Mobile"
     };
 
-    // Fuente única de datos
     const projects = {
         All: [
             {
-                name: "Manejador de tareas",
-                description: "Sistema que permite a los usuarios gestionar tareas, anexar archivos y registrar pasos detallados.",
-                technologies: "HTML, CSS, Bootstrap, JavaScript, jQuery, C#, ASP.NET, SQL, Knockout.js",
-                imageUrl: "Images/TaskManagerImage.png",
-                githubLink: "https://github.com/Charly7017/ManejoTareas",
+                name: "Sistema de reservaciones",
+                description: "Aplicación web para la gestión de reservas de villas, que permite buscar disponibilidad, administrar villas, gestionar servicios y consultar las reservas realizadas.",
+                technologies: "HTML, CSS, Bootstrap, JavaScript, jQuery, C#, ASP.NET, SQL",
+                imageUrl: "Images/BookingSystemImage.png",
+                githubLink: "https://github.com/Charly7017/BookingSystem",
+                category: "Web"
+            },
+            {
+                name: "Blog con IA",
+                description: "Una plataforma de blogs que permite a los usuarios crear blogs manualmente o generarlas usando ChatGPT. También pueden comentar y explorar entradas creadas por otros.",
+                technologies: "HTML, CSS, Bootstrap, JavaScript, jQuery, C#, ASP.NET, SQL",
+                imageUrl: "Images/blogaiImage.png",
+                githubLink: "https://github.com/Charly7017/BlogAI",
                 category: "Web"
             },
             {
@@ -34,29 +46,27 @@ $(document).ready(function () {
                 category: "Mobile"
             },
             {
-                name: "Sistema de reservaciones",
-                description: "Aplicación web para la gestión de reservas de villas, que permite buscar disponibilidad, administrar villas, gestionar servicios y consultar las reservas realizadas.",
-                technologies: "HTML, CSS, Bootstrap, JavaScript, jQuery, C#, ASP.NET, SQL",
-                imageUrl: "Images/BookingSystemImage.png",
-                githubLink: "https://github.com/Charly7017/BookingSystem",
+                name: "Manejador de tareas",
+                description: "Sistema que permite a los usuarios gestionar tareas, anexar archivos y registrar pasos detallados.",
+                technologies: "HTML, CSS, Bootstrap, JavaScript, jQuery, C#, ASP.NET, SQL, Knockout.js",
+                imageUrl: "Images/TaskManagerImage.png",
+                githubLink: "https://github.com/Charly7017/ManejoTareas",
                 category: "Web"
-            }
+            },
         ]
     };
 
-    // Cargar proyectos "All" al iniciar
     (async function loadDefaultProjects() {
         const data = await bringData(Category.All);
         printData(data.projects);
     })();
 
-    // Navegación por categorías
     const list = document.querySelectorAll(".nav-list li");
     let miniProjectsHTML = "";
 
     $(".navigation").click(async function (e) {
         const target = $(e.target).closest("li");
-        const navSibling = $(e.target.parentElement.parentElement.parentElement.nextElementSibling);
+        const navSibling = $(e.target).closest(".container").find("#results").parent();
 
         let data = {};
 
@@ -85,7 +95,6 @@ $(document).ready(function () {
         printData(data.projects);
     });
 
-    // Template de mini proyectos
     function templateMiniProjectsCard(title, description) {
         return `
             <div class="col reveal-project">
@@ -104,7 +113,6 @@ $(document).ready(function () {
             </div>`;
     }
 
-    // Función para obtener los datos filtrados
     async function bringData(type) {
         const all = projects.All;
         if (type === Category.All) {
@@ -115,7 +123,6 @@ $(document).ready(function () {
         };
     }
 
-    // Renderizado de proyectos
     function printData(projects) {
         $("#results").empty();
         projects.forEach(function (project) {
@@ -139,7 +146,6 @@ $(document).ready(function () {
         });
     }
 
-    // Activar clase activa en el menú
     list.forEach((item) => {
         item.addEventListener("click", function (e) {
             list.forEach((li) => li.classList.remove("active"));
