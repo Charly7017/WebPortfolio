@@ -5,7 +5,7 @@ header {
     align-items: center;
     background-color: #0e0e2c;
     padding: 10px;
-    position: relative; /* Necesario para posicionar el botón de hamburguesa */
+    position: relative;
 }
 
 .header__menu {
@@ -16,27 +16,19 @@ header {
     gap: 80px;
 }
 
-.header__menu-item {
+.header__menu-link {
     font-size: 1.5rem;
     font-weight: 700;
-    color: #ffffff;
-    transition: color 0.3s;
-}
-
-.header__menu-item:hover {
-    cursor: pointer;
-}
-
-.header__menu-link {
     color: white;
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 .header__menu-link:visited {
     color: white;
 }
 
-/* Estilos del botón hamburguesa */
+
 .header__hamburger {
     display: none;
     cursor: pointer;
@@ -46,18 +38,18 @@ header {
     align-items: center;
     height: 25px;
     width: 35px;
-    position: absolute; /* Posicionamiento absoluto */
-    right: 20px; /* Ajusta la distancia desde el borde derecho */
-    top: 20px; /* Ajusta la distancia desde el borde superior */
+    position: absolute; 
+    right: 20px;
+    top: 20px;
 }
 
-.header__hamburger .bar {
+.header__hamburger-bar {
     height: 4px;
     width: 30px;
     background-color: white;
 }
 
-/* Estilos para pantallas pequeñas */
+
 @media (max-width: 868px) {
     .header__menu {
         display: none; 
@@ -66,11 +58,11 @@ header {
     }
 
     .header__hamburger {
-        display: flex; /* Mostrar el botón hamburguesa en pantallas pequeñas */
+        display: flex; 
     }
 }
 
-/* Ajustes para pantallas aún más pequeñas */
+
 @media (max-width: 480px) {
     .header__menu {
         gap: 15px;
@@ -78,5 +70,5 @@ header {
 }
 
 .header__menu.active {
-    display: flex; /* Muestra el menú cuando está activo */
+    display: flex; 
 }

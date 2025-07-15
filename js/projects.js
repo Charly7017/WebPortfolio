@@ -1,8 +1,7 @@
 $(document).ready(function () {
 
-
-    $(".nav-list li a").on("click", function (e) {
-        e.preventDefault(); 
+    $(".projects__nav-list li a").on("click", function (e) {
+        e.preventDefault();
     });
 
     const Category = {
@@ -56,15 +55,16 @@ $(document).ready(function () {
         ]
     };
 
+    // Cargar por defecto todos los proyectos
     (async function loadDefaultProjects() {
         const data = await bringData(Category.All);
         printData(data.projects);
     })();
 
-    const list = document.querySelectorAll(".nav-list li");
+    const list = document.querySelectorAll(".projects__nav-item");
     let miniProjectsHTML = "";
 
-    $(".navigation").click(async function (e) {
+    $(".projects__nav").click(async function (e) {
         const target = $(e.target).closest("li");
         const navSibling = $(e.target).closest(".container").find("#results").parent();
 
@@ -98,14 +98,14 @@ $(document).ready(function () {
     function templateMiniProjectsCard(title, description) {
         return `
             <div class="col reveal-project">
-                <div class="cardProjects">
+                <div class="projects__card">
                     <div class="card-body">
-                        <h5 class="card-title">${title}</h5>
+                        <h5 class="projects__card-title">${title}</h5>
                         <p class="card-text">${description}</p>
                         <p class="card-text">HTML, CSS, JavaScript, jQuery</p>
                     </div>
                     <div class="card-footer">
-                        <a target="_blank" class="btnGithub" href="https://github.com/Charly7017/MiniProjects">
+                        <a target="_blank" class="projects__btn-github" href="https://github.com/Charly7017/MiniProjects">
                             <i class="bi bi-github"></i>
                         </a>
                     </div>
@@ -128,15 +128,15 @@ $(document).ready(function () {
         projects.forEach(function (project) {
             const projectHTML = `
                 <div class="col reveal-project">
-                    <div class="cardProjects">
+                    <div class="projects__card">
                         <img src="${project.imageUrl}">
                         <div class="card-body">
-                            <h5 class="card-title">${project.name}</h5>
+                            <h5 class="projects__card-title">${project.name}</h5>
                             <p class="card-text">${project.description}</p>
                             <p class="card-text"><small>${project.technologies}</small></p>
                         </div>
                         <div class="card-footer">
-                            <a target="_blank" class="btnGithub" href="${project.githubLink}">
+                            <a target="_blank" class="projects__btn-github" href="${project.githubLink}">
                                 <i class="bi bi-github"></i>
                             </a>
                         </div>
@@ -146,10 +146,11 @@ $(document).ready(function () {
         });
     }
 
+    // Lógica para resaltar el tab activo
     list.forEach((item) => {
         item.addEventListener("click", function (e) {
-            list.forEach((li) => li.classList.remove("active"));
-            e.currentTarget.classList.add("active");
+            list.forEach((li) => li.classList.remove("projects__nav-item--active"));
+            e.currentTarget.classList.add("projects__nav-item--active");
         });
     });
 });

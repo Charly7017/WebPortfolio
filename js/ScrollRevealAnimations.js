@@ -1,13 +1,7 @@
-// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
-
-// Write your JavaScript code.
-
-
 
 //Animation in hero section
 
-ScrollReveal().reveal('.hero-title', {
+ScrollReveal().reveal('.hero__title', {
     distance: '70px',
     origin: 'top',
     duration: 1000,
@@ -16,7 +10,7 @@ ScrollReveal().reveal('.hero-title', {
 });
 
 
-ScrollReveal().reveal('.hero-subtitle', {
+ScrollReveal().reveal('.hero__subtitle', {
     distance: '50px',
     origin: 'top',
     duration: 1000,
@@ -25,7 +19,7 @@ ScrollReveal().reveal('.hero-subtitle', {
 });
 
 
-ScrollReveal().reveal('.hero-description', {
+ScrollReveal().reveal('.hero__description', {
     distance: '30px',
     origin: 'bottom',
     duration: 1200,
