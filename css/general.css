@@ -6,6 +6,7 @@ html {
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
